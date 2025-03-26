@@ -4,4 +4,5 @@ scripts
 tests
 Programa
 .contracts
-contracts/Token
+.contracts/Token
+contracts
