@@ -1,0 +1,96 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "result_",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "num1_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "num_2",
+						"type": "uint256"
+					}
+				],
+				"name": "addition",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "result",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Connected-Smart-Contracts/Addition.sol": "AdditionContract"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Connected-Smart-Contracts/Addition.sol": {
+			"keccak256": "0x7869bfe52a5faf888ab62c404076e79d11d44577c7961637a989aaa7844452ed",
+			"license": "LPGL-3.0-only",
+			"urls": [
+				"bzz-raw://5b4e2b186f3bcbdef1820e696021de87678bdb906c2d095c68b872001786959e",
+				"dweb:/ipfs/QmTjc6TsHrnzZPwZTSiuVs8GEMJAVbZpqKsJ1MDoC5E9GX"
+			]
+		},
+		"Connected-Smart-Contracts/interfaces/IResult.sol": {
+			"keccak256": "0xe79053147fb1f7b09a794e80398bbcd585e0b488d206cff04562143c716297e9",
+			"license": "LPGL-3.0-only",
+			"urls": [
+				"bzz-raw://a8c9b6125ad5a6b86421635d4f50ba6e68bfe66a1ee1d20d38cc04bd7b73bb80",
+				"dweb:/ipfs/QmdWp53YnTc1pXFiPdBDEUS9HCspqd2bcxY2VLkzcwYp1Z"
+			]
+		}
+	},
+	"version": 1
+}

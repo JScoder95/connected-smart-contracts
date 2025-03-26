@@ -1,0 +1,72 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "result",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "num_",
+						"type": "uint256"
+					}
+				],
+				"name": "setResult",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Connected-Smart-Contracts/Result.sol": "Result"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Connected-Smart-Contracts/Result.sol": {
+			"keccak256": "0xcdbbe9e289731a7631143e11aeb68f406a605df9894bfedc7f737ffa0119409c",
+			"license": "LPGL-3.0-only",
+			"urls": [
+				"bzz-raw://d737f98e869da46d8006542ce353591d24e47905fa1139d7eb06382d06279304",
+				"dweb:/ipfs/QmTm8GhUKKQCmmUNLh6FSzQAAz5rAU5uVz19NUhyxhzbfh"
+			]
+		}
+	},
+	"version": 1
+}
