@@ -1,16 +1,12 @@
----
-title: Interacting Contracts - Addition and Result
----
+# Interacting Contracts: Addition and Result with Fee Management
 
-# Interacting Contracts: Addition and Result
+This README.md explains the functionality of the `Result`, `AdditionContract`, and `IResult` Solidity contracts, showcasing how they interact and manage a fee.
 
-This workspace demonstrates how to create and interact between two Solidity contracts, `AdditionContract` and `Result`, using an interface `IResult`.
+## Overview
 
-## Files Overview
-
-* **`Addition.sol`**: This contract performs an addition operation and stores the result in another contract.
-* **`Result.sol`**: This contract stores the result of an operation.
-* **`IResult.sol`**: This interface defines the functions that `Result.sol` implements, allowing `AdditionContract` to interact with it.
+* **`Result.sol`**: A contract that stores a result, manages an admin, and sets a fee.
+* **`AdditionContract.sol`**: A contract that performs addition and interacts with the `Result` contract to store the result and set the fee.
+* **`IResult.sol`**: An interface that defines the functions that `Result.sol` implements, allowing `AdditionContract` to interact with it.
 
 ## `IResult.sol` - Interface Definition
 
@@ -23,13 +19,16 @@ pragma solidity 0.8.24;
 
 interface IResult {
     function setResult(uint256 num_) external;
+    function setFee(uint256 newFee_) external;
 }
-This file defines an interface IResult.
-An interface declares function signatures without providing their implementation.
-IResult declares the function setResult, which takes a uint256 and is external. This means it can be called from outside the contract.
-Interfaces are used to allow contracts to interact with each other in a standardized way.
-Result.sol - Result Storage Contract
+Defines an interface IResult with two functions:
+setResult(uint256 num_) external: Sets the result.
+setFee(uint256 newFee_) external: Sets the fee.
+Interfaces allow contracts to interact without knowing implementation details.
+Result.sol - Result Storage and Fee Management Contract
 Solidity
+
+## `Result.sol` - Result Smart Contract Definition
 
 // License
 // SPDX-License-Identifier: LPGL-3.0-only
@@ -41,18 +40,32 @@ pragma solidity 0.8.24;
 contract Result {
 
     uint256 public result;
+    address public admin;
+    uint256 public fee;
 
-    //  word (function) + name + args +  visibility + modifiers + return value
+    constructor(address admin_) {
+        admin = admin_;
+        fee = 5;
+    }
+
     function setResult(uint256 num_) external {
        result = num_;
     }
 
+     function setFee(uint256 newFee_) external {
+        if (tx.origin != admin) revert();
+        fee = newFee_;
+    }
+
 }
-This contract, Result, stores a uint256 value named result.
-The setResult function sets the value of result. It implements the function declared in the IResult interface.
-This contract acts as a storage for the result of the addition operation.
-Addition.sol - Addition Contract
+Stores result, admin, and fee state variables.
+Constructor initializes admin and sets fee to 5.
+setResult() sets the result variable.
+setFee() allows only the admin to change the fee.
+AdditionContract.sol - Addition and Interaction Contract
 Solidity
+
+## `Addition.sol` - Addition Smart Contract Definition
 
 // License
 // SPDX-License-Identifier: LPGL-3.0-only
@@ -77,23 +90,41 @@ contract AdditionContract {
         IResult(result).setResult(result_);
     }
 
+     function setFee(uint256 newFee_) external {
+       IResult(result).setFee(newFee_);
+    }
 }
-This contract, AdditionContract, performs an addition operation.
-It imports the IResult interface to interact with the Result contract.
-The constructor takes the address of a deployed Result contract and stores it in the result state variable.
-The addition function takes two uint256 values, adds them, and then calls the setResult function of the Result contract to store the sum.
+
+## `Step to Step` 
+
+Imports IResult to interact with the Result contract.
+Constructor takes the Result contract's address.
+addition() adds two numbers and stores the result in the Result contract.
+setFee() forwards the fee change request to the Result contract.
 Interaction Flow
-Deployment: Deploy Result.sol first, then Addition.sol, providing the Result contract's address to the AdditionContract constructor.
-Addition: Call the addition function of AdditionContract with two numbers.
-Result Storage: The AdditionContract calculates the sum and stores it in the Result contract via the setResult function.
-Retrieval: Call the result public variable of the Result contract to retrieve the stored sum.
-Running the Contracts in Remix
-Compile: Compile all three Solidity files in Remix.
-Deploy Result.sol: Deploy the Result contract. Note the deployed contract address.
-Deploy AdditionContract.sol: Deploy the AdditionContract, providing the Result contract address as the constructor argument.
-Interact: In the "Deploy & Run Transactions" tab, call the addition function of AdditionContract with two numbers. Then, call the result function of the deployed Result contract to verify the result.
-Why Use Interfaces?
-Interfaces ensure that contracts adhere to a specific structure, facilitating interoperability.
-They allow contracts to interact without needing to know the implementation details of other contracts.
-Interfaces are essential for building modular and maintainable smart contract systems.
-This example illustrates a basic interaction between contracts. In real-world applications, interfaces play a critical role in creating complex and interconnected smart contract ecosystems.
+Deployment:
+Deploy Result.sol first.
+Deploy AdditionContract.sol, providing the Result contract's address.
+Addition:
+Call addition() on AdditionContract.sol.
+The result is stored in Result.sol.
+Fee Management:
+Call setFee() on AdditionContract.sol.
+The request is forwarded to Result.sol.
+Only the admin can successfully change the fee.
+Retrieval:
+Call result and fee on Result.sol to retrieve stored values.
+Key Concepts
+Interfaces: Enable standardized contract interaction.
+Contract Interaction: Contracts can call functions of other contracts using interfaces.
+Access Control: Only the admin can modify the fee.
+External Functions: Functions callable from outside the contract.
+Running in Remix
+Compile: Compile all contracts.
+Deploy Result.sol: Note the contract address.
+Deploy AdditionContract.sol: Provide the Result contract address.
+Interact:
+Call addition() on AdditionContract.
+Call result on Result to see the result.
+Call setFee() on AdditionContract.
+Call fee on Result to see the changed fee.

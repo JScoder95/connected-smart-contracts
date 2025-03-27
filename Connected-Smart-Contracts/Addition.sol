@@ -21,4 +21,7 @@ contract AdditionContract {
         IResult(result).setResult(result_);
     }
 
+     function setFee(uint256 newFee_) external {
+       IResult(result).setFee(newFee_);
+    }
 }

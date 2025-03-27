@@ -46,6 +46,19 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newFee_",
+						"type": "uint256"
+					}
+				],
+				"name": "setFee",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -76,19 +89,19 @@
 	},
 	"sources": {
 		"Connected-Smart-Contracts/Addition.sol": {
-			"keccak256": "0x7869bfe52a5faf888ab62c404076e79d11d44577c7961637a989aaa7844452ed",
+			"keccak256": "0xa73264d309716d4b3144f931a9d9a9b07efc1e1960fec4edec76aecbefe428ff",
 			"license": "LPGL-3.0-only",
 			"urls": [
-				"bzz-raw://5b4e2b186f3bcbdef1820e696021de87678bdb906c2d095c68b872001786959e",
-				"dweb:/ipfs/QmTjc6TsHrnzZPwZTSiuVs8GEMJAVbZpqKsJ1MDoC5E9GX"
+				"bzz-raw://89644122e00bc19888724802291c9426ba4cb671c0473a811a5fc642f810f711",
+				"dweb:/ipfs/QmPVfS7sMoPrNkeELWc6X7am4Mtc1kvPKNEXY4T6ysUUHE"
 			]
 		},
 		"Connected-Smart-Contracts/interfaces/IResult.sol": {
-			"keccak256": "0xe79053147fb1f7b09a794e80398bbcd585e0b488d206cff04562143c716297e9",
+			"keccak256": "0xf022b03ea7039cf7a61f283382f68da18de9b5040428ab4354c13636c1a0998f",
 			"license": "LPGL-3.0-only",
 			"urls": [
-				"bzz-raw://a8c9b6125ad5a6b86421635d4f50ba6e68bfe66a1ee1d20d38cc04bd7b73bb80",
-				"dweb:/ipfs/QmdWp53YnTc1pXFiPdBDEUS9HCspqd2bcxY2VLkzcwYp1Z"
+				"bzz-raw://bb20767752c291cbb9e92a1ca26d4ef4b250c71d30fc5075ff47681dcd4efde3",
+				"dweb:/ipfs/QmZGHz5YxmQRz9TJrSWXHZq8rAurVv5fwi2X34mbo1SNwT"
 			]
 		}
 	},

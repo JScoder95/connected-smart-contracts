@@ -6,6 +6,43 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "admin_",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "admin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "fee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "result",
 				"outputs": [
@@ -16,6 +53,19 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newFee_",
+						"type": "uint256"
+					}
+				],
+				"name": "setFee",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -60,11 +110,11 @@
 	},
 	"sources": {
 		"Connected-Smart-Contracts/Result.sol": {
-			"keccak256": "0xcdbbe9e289731a7631143e11aeb68f406a605df9894bfedc7f737ffa0119409c",
+			"keccak256": "0x768b2ef6b470a581562520f7a807acd0a47fd7f55dd83ff3452a11c767bc24a6",
 			"license": "LPGL-3.0-only",
 			"urls": [
-				"bzz-raw://d737f98e869da46d8006542ce353591d24e47905fa1139d7eb06382d06279304",
-				"dweb:/ipfs/QmTm8GhUKKQCmmUNLh6FSzQAAz5rAU5uVz19NUhyxhzbfh"
+				"bzz-raw://665e71e40f33d246d84c75f29b1d0d1e238fe0ead2163f994c2135c2b58e7e79",
+				"dweb:/ipfs/QmSHRmf6o9Q7iGDhwWiwNCMmm4KUvHNgpo8sti46e75uP8"
 			]
 		}
 	},

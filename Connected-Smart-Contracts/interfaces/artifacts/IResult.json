@@ -49,10 +49,24 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
+			"setFee(uint256)": "69fe0e2d",
 			"setResult(uint256)": "812448a5"
 		}
 	},
 	"abi": [
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "newFee_",
+					"type": "uint256"
+				}
+			],
+			"name": "setFee",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
 		{
 			"inputs": [
 				{
