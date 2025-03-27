@@ -21,12 +21,14 @@ interface IResult {
     function setResult(uint256 num_) external;
     function setFee(uint256 newFee_) external;
 }
+```
+
 Defines an interface IResult with two functions:
 setResult(uint256 num_) external: Sets the result.
 setFee(uint256 newFee_) external: Sets the fee.
 Interfaces allow contracts to interact without knowing implementation details.
 Result.sol - Result Storage and Fee Management Contract
-```solidity
+
 
 ## `Result.sol` - Result Smart Contract Definition
 
@@ -59,7 +61,8 @@ contract Result {
     }
 
 }
-```solidity
+```
+
 
 Stores result, admin, and fee state variables.
 Constructor initializes admin and sets fee to 5.
@@ -98,7 +101,7 @@ contract AdditionContract {
        IResult(result).setFee(newFee_);
     }
 }
-```solidity
+```
 
 ## `Step to Step` 
 
