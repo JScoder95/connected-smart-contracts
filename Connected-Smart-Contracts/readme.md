@@ -26,10 +26,11 @@ setResult(uint256 num_) external: Sets the result.
 setFee(uint256 newFee_) external: Sets the fee.
 Interfaces allow contracts to interact without knowing implementation details.
 Result.sol - Result Storage and Fee Management Contract
-Solidity
+solidity```
 
 ## `Result.sol` - Result Smart Contract Definition
 
+```solidity
 // License
 // SPDX-License-Identifier: LPGL-3.0-only
 
@@ -58,15 +59,17 @@ contract Result {
     }
 
 }
+solidity```
 Stores result, admin, and fee state variables.
 Constructor initializes admin and sets fee to 5.
 setResult() sets the result variable.
 setFee() allows only the admin to change the fee.
 AdditionContract.sol - Addition and Interaction Contract
-Solidity
+
 
 ## `Addition.sol` - Addition Smart Contract Definition
 
+```solidity
 // License
 // SPDX-License-Identifier: LPGL-3.0-only
 
@@ -94,6 +97,7 @@ contract AdditionContract {
        IResult(result).setFee(newFee_);
     }
 }
+solidity```
 
 ## `Step to Step` 
 
