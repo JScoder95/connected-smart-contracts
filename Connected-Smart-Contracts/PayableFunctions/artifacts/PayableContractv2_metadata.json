@@ -1,0 +1,66 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "sendEther",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount_",
+						"type": "uint256"
+					}
+				],
+				"name": "withdrawEther",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"PayableFunctions/PayableContractv2.sol": "PayableContractv2"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"PayableFunctions/PayableContractv2.sol": {
+			"keccak256": "0x8fa48b3b69d437fd69c6ebe9063fac1d9ab8fe3f1184ced0cfadc57f31bb05b1",
+			"license": "LPGL-3.0-only",
+			"urls": [
+				"bzz-raw://c0f044e00d43ba33549a0a76eb43d3a4ccc95749bf87e80dc0f9b26dcae6cffa",
+				"dweb:/ipfs/Qmb47yTYCyTzn4syvqCm3KgssTtBcUuTQm41BJffVDooJL"
+			]
+		}
+	},
+	"version": 1
+}
